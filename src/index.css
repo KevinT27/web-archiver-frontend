@@ -6,11 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: rgb(54, 53, 53);
+  background-color: var(--background-color)
 }
 
 :root {
   --primary-color: #363535;
   --secondary-color: #8b0051;
+  --background-color: #fdfdfd;
 }
 
 
@@ -22,4 +24,9 @@ code {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+p, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
 }

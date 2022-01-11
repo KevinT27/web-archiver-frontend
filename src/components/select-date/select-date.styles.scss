@@ -12,6 +12,7 @@ details {
 
 details[open] {
 	z-index: 1;
+	z-index: 100;
 }
 
 summary {
@@ -21,12 +22,13 @@ summary {
   	border: 1px solid var(--secondary-color);;
 	list-style: none;
 	
+	
 	display: flex;
 	justify-content: space-between;
 }
 
 summary:focus {
-	border: 1px solid var(--primary-color);;
+	border: 1px solid var(--primary-color);
 }
 
 summary::-webkit-details-marker {
@@ -69,7 +71,7 @@ details[open] summary:after {
 
 ul {
 	width: 100%;
-	background: inherit;
+	background-color:  var(--background-color);
 	border: 1px solid var(--secondary-color);
 	position: absolute;
 	top: calc(100% + .5rem);

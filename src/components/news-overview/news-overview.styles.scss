@@ -1,0 +1,11 @@
+.news-overview {
+    padding: 0 25px;
+
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);    
+}
