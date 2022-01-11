@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SelectDate from "../select-date/select-date.component";
 
 import "./header.styles.scss";
 
@@ -8,9 +9,7 @@ export const Header = () => (
       News<span className="logo-container_alternative_text">Archiver</span>
     </Link>
 
-    <div className="date-container">
-        
-    </div>
+    <SelectDate />
 
     <div className="options">
         <Link className="option" to="/international">International</Link>

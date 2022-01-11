@@ -8,6 +8,12 @@ body {
   color: rgb(54, 53, 53);
 }
 
+:root {
+  --primary-color: #363535;
+  --secondary-color: #8b0051;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
