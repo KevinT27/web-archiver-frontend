@@ -9,13 +9,7 @@
     background-position: center;
     color: #fff;
     position: relative;
-    margin: 10px 0;
     overflow: hidden;
-
-    &:nth-child(1) { 
-        grid-row-start: 1;
-        grid-row-end: 3;
-    }
 }
 
 .news-item:hover {

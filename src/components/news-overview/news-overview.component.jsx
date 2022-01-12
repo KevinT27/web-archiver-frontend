@@ -13,7 +13,7 @@ class NewsOverview extends React.Component {
 
     componentDidMount() {
         this.setState({ isLoading: true })
-        fetchNews().then(news => { this.setState({ news: news, isLoading: false }); }).then(() => console.log(this.state.news))
+        fetchNews().then(news => { this.setState({ news: news, isLoading: false }); })
     }
 
 
@@ -30,7 +30,7 @@ class NewsOverview extends React.Component {
                     :
                     this.divideListIntoParts(this.state.news, 3)
                         .map((array, index) => {
-                            return <div className={`news-grid ${(index % 2) && "grid-alternate"}`}>
+                            return <div key={index} className={`news-grid ${(index % 2) && "grid-alternate"}`}>
                                 {array.map(item => <NewsItem key={item.id} {...item} />)}
                             </div>
                         }

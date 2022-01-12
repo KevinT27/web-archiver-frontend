@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, orderBy } from "firebase/firestore";
 import moment from 'moment'
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,9 +22,11 @@ const db = getFirestore();
 
 export const fetchNews = async () => {
   const newsList = [];
-  const querySnapshot = await getDocs(collection(db, "news"));
+  const newsRef = collection(db, "news");
+  const qNewsRef = query(newsRef, orderBy("date", "desc"));
+  const querySnapshot = await getDocs(qNewsRef);
   querySnapshot.forEach((doc) => {
-    let date_object = new Date(doc.data().date.seconds);
+    let date_object = new Date(doc.data().date.toDate());
     let formatted_date = moment(date_object).format("LL");
     newsList.push({ id: doc.id, formatted_date, ...doc.data() })
   });
