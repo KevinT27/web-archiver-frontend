@@ -7,13 +7,32 @@ import { fetchNews } from '../../db/firebase.utils';
 
 class NewsOverview extends React.Component {
 
-    state = {
-        isLoading: true
+    constructor() {
+        super();
+
+        this.state = {
+            isLoading: true
+        }
     }
 
     componentDidMount() {
-        this.setState({ isLoading: true })
-        fetchNews().then(news => { this.setState({ news: news, isLoading: false }); })
+        const { dateToFilter } = this.props;
+        const { year, month } = dateToFilter;
+        const filterDate = new Date(`${year}-${month}`);
+
+        fetchNews(filterDate).then(news => this.setState({ ...this.state, news, isLoading: false }))
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (!(prevProps.dateToFilter.year === this.props.dateToFilter.year && prevProps.dateToFilter.month === this.props.dateToFilter.month)) {
+            const { dateToFilter } = this.props;
+            const { year, month } = dateToFilter;
+            const filterDate = new Date(`${year}-${month}`);
+
+            console.log(dateToFilter);
+          
+            fetchNews(filterDate).then(news => this.setState({ ...this.state, news, isLoading: false }))
+        }
     }
 
 
@@ -33,7 +52,10 @@ class NewsOverview extends React.Component {
                                 {array.map(item => <NewsItem key={item.id} {...item} />)}
                             </div>
                         }
-                        )}
+                        )
+
+
+                }
             </div>)
     }
 }

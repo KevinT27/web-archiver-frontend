@@ -20,12 +20,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
-export const fetchNews = async () => {
+export const fetchNews = async (filterDate) => {
   const newsList = [];
   const newsRef = collection(db, "news");
 
-  let startDate = new Date("2022-01-11");
-  let endDate = new Date("2022-01-13");
+  let startDate = filterDate;
+  let endDate = new Date(filterDate.getFullYear(), filterDate.getMonth() + 1, 0);
 
   const qNewsRef = query(newsRef, where("date", ">", startDate), where("date", "<=", endDate), orderBy("date", "desc"));
   const querySnapshot = await getDocs(qNewsRef);

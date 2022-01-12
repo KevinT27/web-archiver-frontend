@@ -3,13 +3,13 @@ import SelectDate from "../select-date/select-date.component";
 
 import "./header.styles.scss";
 
-export const Header = () => (
+export const Header = ({ dateList, setFilterDate }) => (
   <div className="header">
     <div className="lead-head">
       <Link className="logo-container" to="/">
         News<span className="logo-container_alternative_text">Archiver</span>
       </Link>
-      <SelectDate />
+      <SelectDate dateList={dateList} setFilterDate={setFilterDate}  />
     </div>
 
     <div className="options">
