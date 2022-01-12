@@ -42,3 +42,11 @@
 .footer-box__header {
     margin: 5px 0px 10px 0px;
 }
+
+.footer-box__source {
+    align-self: flex-end;
+    top: 0;
+    position: absolute;
+    padding: 10px;
+    font-size: .6rem;
+}

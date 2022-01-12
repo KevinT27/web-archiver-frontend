@@ -22,7 +22,6 @@ class NewsOverview extends React.Component {
         return result;
     }
 
-
     render() {
         return (
             <div className='news-overview'>

@@ -1,0 +1,33 @@
+.main-footer{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.info-container {
+    justify-self: left;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 90%;
+    padding: 20px;
+
+    span {
+        font-size: .7rem;
+    }
+}
+
+.company-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    span {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+}
